@@ -3,11 +3,42 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>비교해보기</title>
+        <title>비교해보기(React)</title>
     </head>
     <body>
-        <button type="button" id="clicker">클릭</button>
-        <p id="counter">0</p>
-        <script type="module" src="./js/counter.js"></script>
+        <div id="root"></div>
+        <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+        <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script type="text/babel">
+            const root = document.querySelector("#root");
+
+            function Counter() {
+                return (
+                    <p>0</p>
+                );
+            }
+
+            function Clicker() {
+                return (
+                    <button
+                        onClick={() => {
+                            console.log("클릭됨");
+                        }}
+                    >
+                        클릭
+                    </button>
+                );
+            }
+
+            const container = (
+                <>
+                    <Clicker />
+                    <Counter />
+                </>
+            );
+
+            ReactDOM.render(container, root);
+        </script>
     </body>
 </html>

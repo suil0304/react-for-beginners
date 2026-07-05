@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>비교해보기(바닐라)</title>
+    </head>
+    <body>
+        <button type="button" id="clicker">클릭</button>
+        <p id="counter">0</p>
+        <script>
+            const clicker = document.querySelector("#clicker");
+            const counter = document.querySelector("#counter");
+
+            let clickCount = 0;
+
+            clicker.addEventListener("click", () => {
+                clickCount++;
+                counter.innerText = clickCount;
+            });
+        </script>
+    </body>
+</html>
